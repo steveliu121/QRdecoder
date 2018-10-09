@@ -49,3 +49,16 @@ To profile the code (very useful to optimize the code):
   1. Install Valgrind
   2. Run `valgrind --tool=callgrind build/zxing - path/to/test/data/*.jpg > report.html`
   3. Analyze output using KCachegrind
+
+# Utils based on zxing
+
+By decoding QR code, we can realize some useful functions:
+
+  1. Auto connect wifi tool: qrwifi
+
+	By decode imge(.jpg, .jpeg, .png) that contains "ssid/password" information of the AP,
+	you can connect your device(.eg raspberrypi) to your AP easily.
+
+	Usage: $ sudo ./qrwifi wifi.jpg
+
+	You can write a script which capture QR code image, decode it and connect wifi all in one.
